@@ -1,0 +1,41 @@
+{
+  "name": "template-nodejs-expressjs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "dev": "cross-env NODE_ENV=development DEBUG=express:* nodemon app.js",
+    "init": "cross-env NODE_ENV=development node init.js",
+    "start": "cross-env NODE_ENV=production pm2 start app.js -i max",
+    "stop": "pm2 stop all && pm2 delete all",
+    "watch": "pm2 list",
+    "monit": "pm2 monit",
+    "prepare": "devops-husky install"
+  },
+  "repository": {
+    "type": "git",
+    "url": "ssh://git@code.canway.net:43990/soft-fy19-canway-devops/devops-frontend-libs.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.20.0",
+    "config": "^3.3.7",
+    "cookie-parser": "^1.4.6",
+    "cors": "^2.8.5",
+    "cross-env": "^7.0.3",
+    "csurf": "^1.11.0",
+    "express": "^4.18.1",
+    "express-session": "^1.17.3",
+    "jsonwebtoken": "^8.5.1",
+    "morgan": "^1.10.0",
+    "mysql": "^2.18.1",
+    "pm2": "^5.2.0",
+    "winston": "^3.8.1"
+  },
+  "devDependencies": {
+    "@devops/devops-husky": "^1.3.3",
+    "nodemon": "^2.0.19"
+  }
+}
